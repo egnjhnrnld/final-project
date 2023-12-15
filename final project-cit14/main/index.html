@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Easy Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>UI/UX Designer</p>
+            <h1>Hi, I'm <span>John Ronald</span><br>Student of University of the Cordilleras</h1>
+        </div>
+    </div>
+</div>
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>
+                An ungraduate student of the University of the Cordilleras, taking up an undergraduate degree in Information Technolgy - Web Development.
+                >Works as a student assistant of the IT Systems and Services Office.
+                >Knows the basics of programming in HTML, CSS, and Javascript.
+                >Has experience in programming, IT Systems maintenance, and Network Infrastructure configuration.
+                
+                Hobbies:
+                >Touring
+                >Cafe hopping
+                >Boxing
+                >Watching TV Shows.
+                </p>
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links"onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+                <ul>
+                    <li><span>Networking</span><br>Building Network Infrastructure</li>
+                    <li><span>Web Development</span><br>Web App Development</li>
+                    <li><span>Visual Editing</span><br>Editing Visual Aids</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+                <ul>
+                    <li><span>2022 - Current</span><br>Building Network Infrastructure</li>
+                    <li><span>2021 - Current</span><br>Web App Development</li>
+                    <li><span>2018 - Current</span><br>Editing Visual Aids</li>
+                </ul>
+            </div>
+            <div class="tab-contents" id="education">
+                <ul>
+                    <li><span>2022</span><br>Network Infrastructure - IT Systems and Services</li>
+                    <li><span>2022</span><br>Web Development - University of the Cordilleras</li>
+                    <li><span>2018</span><br>Regional Schools Press Conferences - ZNHS</li>
+                </ul>
+            </div>
+            </div>
+    </div>
+</div>
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">Programming Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/work-1.png">
+                <div class="layer">
+                    <h3>Mockups to Websites</h3>
+                    <p>
+                        A basic mockup of websites utilizing the concepts of containers, headers, and divisions in HTML and CSS.
+                    </p>
+                    <a href="work-1/index.html">Link</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-2.png">
+                <div class="layer">
+                    <h3>Progress Bar + Buttons</h3>
+                    <p>
+                        A javascript activity that introduces the use of progress bar + buttons with event listener in HTML and JavaScript.
+                    </p>
+                    <a href="work-2/index.htm">Link</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-3.png">
+                <div class="layer">
+                    <h3>Student Registration Form</h3>
+                    <p>
+                        A javascript activity that uses cards and modals from bootstrap to create a simple registration form webpage.
+                    </p>
+                    <a href="work-3/index.html">Link</a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/work-4.png"><div class="layer">
+                    <h3>jQuery Activity</h3>
+                    <p>
+                        A programming activity that uses jQuery, JavaScript, HTML, and CSS to create a webpage that accepts and records user registration.
+                    </p>
+                    <a href="work-4/index.html">Link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>

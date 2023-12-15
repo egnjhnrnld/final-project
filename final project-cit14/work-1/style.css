@@ -1,0 +1,25 @@
+/* Add your styles here */
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+
+  

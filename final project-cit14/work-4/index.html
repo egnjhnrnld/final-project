@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<title>Record Management</title>
+
+<style>
+h3{
+color: green;
+text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container mt-4">
+<div class="row">
+<div class="col-md-6">
+<h4>Record Form</h4>
+<div id="recordForm">
+<div class="form-group">
+<label for="name">Name:</label>
+<input type="text" class="form-control" id="name" placeholder="Juan Dela Cruz">
+</div>
+<div class="form-group">
+<label for="course">Course:</label>
+<input type="text" class="form-control" id="course" placeholder="CIT14">
+</div>
+<div class="form-group">
+<label for="section">Section:</label>
+<input type="text" class="form-control" id="section" placeholder="2F">
+</div>
+<button class="btn btn-primary" onclick="saveRecord()">Save Record</button>
+</div>
+</div>
+<div class="col-md-6">
+<h3>Record Table</h3>
+<table class="table table-success table-striped">
+<thead>
+<tr>
+<th>Name</th>
+<th>Course</th>
+<th>Section</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="recordTableBody"></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+function saveRecord() {
+var name = $('#name').val();
+var course = $('#course').val();
+var section = $('#section').val();
+
+var newRow = '<tr><td>' + name + '</td><td>' + course + '</td><td>' + section + '</td>' +
+'<td><button class="btn btn-danger" onclick="deleteRow(this)">DELETE</button></td></tr>';
+
+$('#recordTableBody').append(newRow);
+
+// Clear input fields after saving
+$('#name').val('');
+$('#course').val('');
+$('#section').val('');
+}
+
+function deleteRow(btn) {
+var row = btn.parentNode.parentNode;
+row.parentNode.removeChild(row);
+}
+</script>
+
+</body>
+
+</html>
